@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :gists
+  has_many :favorites
+  has_many :favorite_gists, :through => :favorites, :source => :gist
+
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
 

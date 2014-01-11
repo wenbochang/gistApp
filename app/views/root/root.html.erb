@@ -1,0 +1,17 @@
+GISTS
+<title>Gists</title>
+
+<div id="content"></div>
+
+<script type="application/json" id="gists_json">
+	<%= Gist.all.to_json.html_safe %>
+</script>
+
+<script type="application/javascript">
+	$(function() {
+		var gists = JSON.parse($("#gists_json").html());
+
+		window.GistApp.initialize($("#content"), gists);
+
+	});
+</script>

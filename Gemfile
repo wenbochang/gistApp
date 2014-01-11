@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'backbone-on-rails'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
@@ -15,3 +16,4 @@ end
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
 gem 'pg'
+gem 'jbuilder'

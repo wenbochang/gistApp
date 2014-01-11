@@ -1,0 +1,1 @@
+json.array! @gists, partial: "gists/partial", :as => :gist
