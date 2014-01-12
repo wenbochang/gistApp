@@ -14,6 +14,10 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    Favorite.find_by_user_id_and_gist_id(
+      current_user.id,
+      params[:gist_id],
+    ).destroy()
     head :ok
   end
 

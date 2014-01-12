@@ -26,8 +26,11 @@ GistApp.Views.GistsDetailView = Backbone.View.extend({
 	},
 
 	removeFav: function() {
-		g = this.model
-		debugger
-		//this.model.get("favorite").destroy();
+		var g = this.model;
+    g.fetch({
+      success: function(gist) {
+        gist.get("favorite").destroy();
+      }
+    });
 	}
 })
